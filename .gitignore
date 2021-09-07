@@ -1,0 +1,6 @@
+./assembly
+./obj
+./pre_processor
+*.o
+*.s
+*.swp
