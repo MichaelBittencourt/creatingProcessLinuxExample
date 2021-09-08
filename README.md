@@ -42,6 +42,12 @@ $ make DEFINES=-DEXEC_TEST
 $ make DEFINES=-DSIMPLE_TEST
 ```
 
+## Build Binary to check a result when run a fork
+
+```bash
+$ make DEFINES=-DRESULT_TEST
+```
+
 ## Create debug binary
 
 ```bash

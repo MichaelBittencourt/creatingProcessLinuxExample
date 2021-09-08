@@ -19,7 +19,6 @@ int main() {
 #elif defined SIMPLE_TEST
 
 int main() {
-
     printf("Count: 0\n");
     fork();
     printf("Count: 1\n");
@@ -28,7 +27,26 @@ int main() {
     fork();
     printf("Count: 3\n");
     return 0;
+
 }
+#elif defined RESULT_TEST
+
+int value = 5;
+
+int main() {
+
+    pid_t pid;
+    pid = fork();
+    if (pid == 0) {
+        value += 15;
+        return 0;
+    } else {
+        wait(NULL);
+        printf("PARENT: value = %d", value);
+        return 0;
+    }
+}
+
 #else 
 
 void printChildren(pid_t children[], int qtd) {

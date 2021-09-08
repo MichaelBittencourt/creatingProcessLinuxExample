@@ -107,6 +107,7 @@ help:
 	@ echo "\tmake no_optimization -> build without optimization"
 	@ echo "\tmake DEFINES=-DEXEC_TEST -> build to test exec() function"
 	@ echo "\tmake DEFINES=-DSIMPLE_TEST -> build to test a simple fork() function usage"
+	@ echo "\tmake DEFINES=-DRESULT_TEST -> build to test a result after fork()"
 	@ echo ""
 	@ echo "\t[OBS]: You can conbine these options"
 	@ echo "\t\tEg: make assembly debug"
