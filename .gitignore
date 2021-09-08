@@ -1,3 +1,4 @@
+process
 ./assembly
 ./obj
 ./pre_processor
