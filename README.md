@@ -80,6 +80,12 @@ $ make assembly
 $ make help
 ```
 
+## See Shell similar behavior written in Shell Script
+
+```bash
+$ ./myShell.sh
+```
+
 ## [OBS]
 
 - You can combine the build options `make pre_processor assembly debug`

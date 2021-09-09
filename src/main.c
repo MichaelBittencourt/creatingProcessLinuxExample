@@ -8,8 +8,12 @@
 #ifdef EXEC_TEST
 
 int main() {
-    printf("Now the Script will call echo and try print something\n");
-    execlp("/bin/echo", "echo", "$0 $SHELL", "$(whoami)", NULL);
+    pid_t pid;
+    pid = fork();
+    if (pid == 0) {
+        printf("Now the Script will call echo and try print something\n");
+        execlp("/bin/echo", "echo", "$0 $SHELL", "$(whoami)", NULL);
+    }
     printf("The list files does not work because the process are replaced\n");
     execlp("/bin/ls", "ls", "-la", NULL);
     
@@ -27,7 +31,6 @@ int main() {
     fork();
     printf("Count: 3\n");
     return 0;
-
 }
 #elif defined RESULT_TEST
 
@@ -39,10 +42,10 @@ int main() {
     pid = fork();
     if (pid == 0) {
         value += 15;
-        return 0;
+        return value;
     } else {
-        wait(NULL);
-        printf("PARENT: value = %d", value);
+        wait(&value);
+        printf("PARENT: value = %d", WEXITSTATUS(value));
         return 0;
     }
 }
